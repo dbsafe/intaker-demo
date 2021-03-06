@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,13 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\sample-files\Balance10.xml" Link="sample-files\Balance10.xml">
+    <Content Include="..\sample-files\balance10.xml" Link="sample-files\balance10.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\sample-files\sales.xml" Link="sample-files\sales.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intaker" Version="0.1.0" />
+    <PackageReference Include="Intaker" Version="0.1.1.73-beta" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\sample-files\5000-sales-records.csv" Link="sample-files\5000-sales-records.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sample-files\50000-sales-records.csv" Link="sample-files\50000-sales-records.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\sample-files\single-data-type-with-errors.v10.csv" Link="sample-files\single-data-type-with-errors.v10.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -20,11 +20,18 @@ namespace IntakerConsole
 
             PrintInputs(config);
 
-            var fileProcessorDefinition = BuildFileProcessorDefinition10(config.SpecsPath);
-            var fileDataSourceValidFile = BuildFileDataSource(config.InputPath);
+            var (fileProcessorDefinition, commentedOutIndicator) = BuildFileProcessorDefinition10(config.SpecsPath);
+            var fileDataSourceValidFile = BuildFileDataSource(config.InputPath, commentedOutIndicator);
             var processor = new ParsedDataProcessor10(fileDataSourceValidFile, fileProcessorDefinition);
 
+            var memoryBeforeLoading = GC.GetTotalMemory(true) / 1024;
             var parsed = processor.Process();
+            var memoryAfterLoading = GC.GetTotalMemory(true) / 1024;
+            var increase = memoryAfterLoading - memoryBeforeLoading;
+
+            Console.WriteLine($"Memory after loading: {memoryBeforeLoading:n0} Kb");
+            Console.WriteLine($"Memory after loading: {memoryAfterLoading:n0} Kb");
+            Console.WriteLine($"Memory after loading: {increase:n0} Kb");
 
             PrintSummary(parsed);
             WriteDataRowsToFile(config.OutputPath, parsed.DataRows);
@@ -116,16 +123,24 @@ namespace IntakerConsole
             }
         }
 
-        private static FileDataSource<ParserContext10> BuildFileDataSource(string inputPath)
+        private static FileDataSource<ParserContext10> BuildFileDataSource(string inputPath, string commentedOutIndicator)
         {
-            var fileDataSourceConfig = new FileDataSourceConfig { Delimiter = ",", HasFieldsEnclosedInQuotes = false, Path = inputPath };
+            var fileDataSourceConfig = new FileDataSourceConfig 
+            { 
+                Delimiter = ",", 
+                HasFieldsEnclosedInQuotes = false, 
+                Path = inputPath,
+                CommentedOutIndicator = commentedOutIndicator
+            };
+
             return new FileDataSource<ParserContext10>(fileDataSourceConfig);
         }
 
-        private static FileProcessorDefinition10 BuildFileProcessorDefinition10(string specsPath)
+        private static (FileProcessorDefinition10 fileProcessorDefinition10, string commentedOutIndicator) BuildFileProcessorDefinition10(string specsPath)
         {
             var inputDefinitionFile = FileLoader.Load<InputDefinitionFile10>(specsPath);
-            return DataProcessor.ProcessorDefinition.FileProcessorDefinitionBuilder.CreateFileProcessorDefinition(inputDefinitionFile);
+            var fileProcessorDefinition = DataProcessor.ProcessorDefinition.FileProcessorDefinitionBuilder.CreateFileProcessorDefinition(inputDefinitionFile);
+            return (fileProcessorDefinition, inputDefinitionFile.CommentedOutIndicator);
         }
 
         private static bool ValidatePaths(IntakerConsoleAppConfig config)
