@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "IntakerConsole-Valid-File": {
+      "commandName": "Project",
+      "commandLineArgs": "specs:sample-files/balance10.xml input:sample-files/single-data-type.v10.csv output:single-data-type-decoded.json"
+    },
+    "IntakerConsole-Invalid-file": {
+      "commandName": "Project",
+      "commandLineArgs": "specs:sample-files/balance10.xml input:sample-files/single-data-type-with-errors.v10.csv output:single-data-type-with-errors-decoded.json"
+    }
+  }
+}
