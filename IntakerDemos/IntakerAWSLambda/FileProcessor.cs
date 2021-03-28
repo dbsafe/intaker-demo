@@ -84,9 +84,9 @@ namespace IntakerAWSLambda
                 };
 
                 using var response = await client.GetObjectAsync(request);
-                var fileDataSourceValidFile = BuildFileDataSource(response.ResponseStream, inputDefinitionFile);
+                var dataSource = BuildDataSource(response.ResponseStream, inputDefinitionFile);
 
-                var processor = new ParsedDataProcessor10(fileDataSourceValidFile, fileProcessorDefinition);
+                var processor = new ParsedDataProcessor10(dataSource, fileProcessorDefinition);
 
                 parsed = processor.Process();
 
@@ -131,7 +131,7 @@ namespace IntakerAWSLambda
             await client.PutObjectAsync(request);
         }
 
-        private static IDataSource<ParserContext10> BuildFileDataSource(Stream stream, InputDefinitionFile10 inputDefinition)
+        private static IDataSource<ParserContext10> BuildDataSource(Stream stream, InputDefinitionFile10 inputDefinition)
         {
             var streamDataSourceConfig = new StreamDataSourceConfig
             {
