@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intaker" Version="0.2.0.1" />
+    <PackageReference Include="Intaker" Version="0.1.1.80-beta" />
   </ItemGroup>
 
   <ItemGroup>

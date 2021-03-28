@@ -27,7 +27,7 @@ intaker-file-specs | Configuration. Stores file specifications used when parsing
 
 Since in AWS S3 the bucket names are unique you need to replace the bucket names by your own bucket names. e.g. `intaker-in` could be `your-name-intaker-in`. The bucket names are used in AWS configuration and the application configuration file.
 
-**Create buckets using the AWS Console or the AWS CLI tool**
+**Create buckets using the AWS Console or the AWS CLI tool.** All the buckets must be in the same AWS Availability Zone
 - intaker-in
 - intaker-out
 - intaker-file-specs
@@ -121,22 +121,5 @@ To view your deployed function open its Function View window by double-clicking 
 To view execution logs of invocations of your function use the Logs tab in the opened Function View window.
 
 &nbsp;  
-## Here are some steps to follow to get started from the command line:
-
-Once you have edited your template and code you can deploy your application using the [Amazon.Lambda.Tools Global Tool](https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools) from the command line.
-
-Install Amazon.Lambda.Tools Global Tools if not already installed.
-```
-    dotnet tool install -g Amazon.Lambda.Tools
-```
-
-If already installed check if new version is available.
-```
-    dotnet tool update -g Amazon.Lambda.Tools
-```
-
-Deploy function to AWS Lambda
-```
-    cd "IntakerAWSLambda/src/IntakerAWSLambda"
-    dotnet lambda deploy-function
-```
+## Executing the Lambda function:
+Upload some of the cvs files from the folder `sample-files` into bucket `intaker-in`
