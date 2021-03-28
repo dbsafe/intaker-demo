@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntakerConsole", "IntakerConsole\IntakerConsole.csproj", "{23091A01-1725-4C81-976E-6E04834B804D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntakerConsole", "IntakerConsole\IntakerConsole.csproj", "{23091A01-1725-4C81-976E-6E04834B804D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntakerAWSLambda", "IntakerAWSLambda\IntakerAWSLambda.csproj", "{CD7E3676-D1D1-4767-BA77-13AEEE49B122}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{23091A01-1725-4C81-976E-6E04834B804D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23091A01-1725-4C81-976E-6E04834B804D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23091A01-1725-4C81-976E-6E04834B804D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
