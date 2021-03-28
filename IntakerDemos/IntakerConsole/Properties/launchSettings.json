@@ -1,20 +1,20 @@
 {
   "profiles": {
-    "IntakerConsole-Valid-File-Balance": {
+    "IntakerConsole-Valid-Single-Data-File-Balance": {
       "commandName": "Project",
-      "commandLineArgs": "specs:sample-files/balance10.xml input:sample-files/single-data-type.v10.csv output:single-data-type-decoded.json"
+      "commandLineArgs": "specs:sample-files/intaker.balance10.xml input:sample-files/single-data-type.balance10.csv output:sample-files/single-data-type.balance10.json"
     },
-    "IntakerConsole-Invalid-file-Balance": {
+    "IntakerConsole-Invalid-Single-Data-File-Balance": {
       "commandName": "Project",
-      "commandLineArgs": "specs:sample-files/balance10.xml input:sample-files/single-data-type-with-errors.v10.csv output:single-data-type-with-errors-decoded.json"
+      "commandLineArgs": "specs:sample-files/intaker.balance10.xml input:sample-files/single-data-type-with-errors.balance10.csv output:sample-files/single-data-type-with-errors.balance10.json"
     },
     "IntakerConsole-Valid-File-Sales-5000": {
       "commandName": "Project",
-      "commandLineArgs": "specs:sample-files/sales.xml input:sample-files/5000-sales-records.csv output:5000-sales-records-decoded.json"
+      "commandLineArgs": "specs:sample-files/intaker.sales10.xml input:sample-files/5000-records.sales10.csv output:sample-files/5000-records.sales10.json"
     },
     "IntakerConsole-Valid-File-Sales-50000": {
       "commandName": "Project",
-      "commandLineArgs": "specs:sample-files/sales.xml input:sample-files/50000-sales-records.csv output:50000-sales-records-decoded.json"
+      "commandLineArgs": "specs:sample-files/intaker.sales10.xml input:sample-files/50000-records.sales10.csv output:sample-files/50000-records.sales10.json"
     }
   }
 }

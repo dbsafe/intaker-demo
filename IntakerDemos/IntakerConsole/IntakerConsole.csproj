@@ -6,16 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\sample-files\balance10.xml" Link="sample-files\balance10.xml">
+    <Content Include="..\sample-files\intaker.balance10.xml" Link="sample-files\intaker.balance10.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\sample-files\sales.xml" Link="sample-files\sales.xml">
+    <Content Include="..\sample-files\intaker.sales10.xml" Link="sample-files\intaker.sales10.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intaker" Version="0.1.1.73-beta" />
+    <PackageReference Include="Intaker" Version="0.2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,16 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\sample-files\5000-sales-records.csv" Link="sample-files\5000-sales-records.csv">
+    <None Include="..\sample-files\5000-records.sales10.csv" Link="sample-files\5000-records.sales10.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\sample-files\50000-sales-records.csv" Link="sample-files\50000-sales-records.csv">
+    <None Include="..\sample-files\50000-records.sales10.csv" Link="sample-files\50000-records.sales10.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\sample-files\single-data-type-with-errors.v10.csv" Link="sample-files\single-data-type-with-errors.v10.csv">
+    <None Include="..\sample-files\single-data-type-with-errors.balance10.csv" Link="sample-files\single-data-type-with-errors.balance10.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\sample-files\single-data-type.v10.csv" Link="sample-files\single-data-type.v10.csv">
+    <None Include="..\sample-files\single-data-type.balance10.csv" Link="sample-files\single-data-type.balance10.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
