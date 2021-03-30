@@ -1,4 +1,4 @@
-This project demonstrates how to use the Intaker library in an AWS Lambda.
+This project demonstrates how to use the Intaker library with AWS Lambda.
 
 The projects was created from the project template
 `AWS Lambda Empty Function Project`
