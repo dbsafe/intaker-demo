@@ -1,4 +1,4 @@
-This project demonstrates how to use the Intaker library in an AWS Lambda.
+This project demonstrates how to use the Intaker library with AWS Lambda.
 
 The projects was created from the project template
 `AWS Lambda Empty Function Project`
@@ -116,10 +116,12 @@ aws-lambda-tools-defaults.json | Default argument settings for use with Visual S
 
 To deploy your function to AWS Lambda, right click the project in Solution Explorer and select *Publish to AWS Lambda*.
 
-To view your deployed function open its Function View window by double-clicking the function name shown beneath the AWS Lambda node in the AWS Explorer tree.
+To view your deployed function, open its Function View window by double-clicking the function name shown beneath the AWS Lambda node in the AWS Explorer tree.
 
 To view execution logs of invocations of your function use the Logs tab in the opened Function View window.
 
 &nbsp;  
 ## Executing the Lambda function:
-Upload some of the cvs files from the folder `sample-files` into bucket `intaker-in`
+Upload some of the CSV files that are in the project folder `sample-files` to the `intaker-in` bucket. If everything was configured properly the CSV files will be deleted from `intaker-in and json output files will be created in the 'intaker-out' bucket.
+
+Review the logs created by the Lambda using CloudWatch.
