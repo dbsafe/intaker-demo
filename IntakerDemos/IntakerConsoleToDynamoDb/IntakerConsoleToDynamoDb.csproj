@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\sample-files\intaker.balance10.xml" Link="sample-files\intaker.balance10.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\sample-files\intaker.sales10.xml" Link="sample-files\intaker.sales10.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.0.9" />
+    <PackageReference Include="Intaker" Version="0.1.1.80-beta" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Intaker.Repository.DynamoDb\Intaker.Repository.DynamoDb.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="sample-files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\sample-files\5000-records.sales10.csv" Link="sample-files\5000-records.sales10.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sample-files\50000-records.sales10.csv" Link="sample-files\50000-records.sales10.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sample-files\single-data-type-with-errors.balance10.csv" Link="sample-files\single-data-type-with-errors.balance10.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sample-files\single-data-type.balance10.csv" Link="sample-files\single-data-type.balance10.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

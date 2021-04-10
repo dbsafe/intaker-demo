@@ -7,6 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntakerConsole", "IntakerCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntakerAWSLambda", "IntakerAWSLambda\IntakerAWSLambda.csproj", "{CD7E3676-D1D1-4767-BA77-13AEEE49B122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntakerConsoleToDynamoDb", "IntakerConsoleToDynamoDb\IntakerConsoleToDynamoDb.csproj", "{493F1A5D-4DD6-45BF-9FE0-D62194F53DFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85830697-34EA-4546-915D-1E27EEDE937F}"
+	ProjectSection(SolutionItems) = preProject
+		DynamoDb\file-table.json = DynamoDb\file-table.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intaker.Repository.DynamoDb", "Intaker.Repository.DynamoDb\Intaker.Repository.DynamoDb.csproj", "{1698DDDE-66A0-4D71-ADB1-4B97B383F828}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +30,14 @@ Global
 		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD7E3676-D1D1-4767-BA77-13AEEE49B122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{493F1A5D-4DD6-45BF-9FE0-D62194F53DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493F1A5D-4DD6-45BF-9FE0-D62194F53DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493F1A5D-4DD6-45BF-9FE0-D62194F53DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493F1A5D-4DD6-45BF-9FE0-D62194F53DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1698DDDE-66A0-4D71-ADB1-4B97B383F828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1698DDDE-66A0-4D71-ADB1-4B97B383F828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1698DDDE-66A0-4D71-ADB1-4B97B383F828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1698DDDE-66A0-4D71-ADB1-4B97B383F828}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

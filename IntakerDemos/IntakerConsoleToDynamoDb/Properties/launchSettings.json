@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "IntakerConsoleToDynamoDb-Valid-Single-Data-File-Balance": {
+      "commandName": "Project",
+      "commandLineArgs": "IntakerConsoleApp:SpecsPath=sample-files/intaker.balance10.xml IntakerConsoleApp:InputPath=sample-files/single-data-type.balance10.csv IntakerConsoleApp:DataType=balance",
+      "environmentVariables": {
+        "AWS_PROFILE": "developer-tool"
+      }
+    },
+    "IntakerConsoleToDynamoDb-Valid-File-Sales-5000": {
+      "commandName": "Project",
+      "commandLineArgs": "IntakerConsoleApp:SpecsPath=sample-files/intaker.sales10.xml IntakerConsoleApp:InputPath=sample-files/5000-records.sales10.csv IntakerConsoleApp:DataType=sales",
+      "environmentVariables": {
+        "AWS_PROFILE": "developer-tool"
+      }
+    },
+    "IntakerConsoleToDynamoDb-Valid-File-Sales-50000": {
+      "commandName": "Project",
+      "commandLineArgs": "IntakerConsoleApp:SpecsPath=sample-files/intaker.sales10.xml IntakerConsoleApp:InputPath=sample-files/50000-records.sales10.csv IntakerConsoleApp:DataType=sales",
+      "environmentVariables": {
+        "AWS_PROFILE": "developer-tool"
+      }
+    }
+  }
+}
