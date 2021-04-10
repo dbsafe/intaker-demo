@@ -1,0 +1,27 @@
+{
+  "TableName": "FileTable",
+  "KeySchema": [
+    {
+      "AttributeName": "FileId",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "RowNumber",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "FileId",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "RowNumber",
+      "AttributeType": "N"
+    }
+  ],
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  }
+}
