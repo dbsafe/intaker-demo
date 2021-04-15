@@ -1,4 +1,7 @@
-﻿using System;
+﻿using IntakerConsole.Shared.Logger;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Diagnostics;
 
 namespace IntakerConsole
@@ -7,17 +10,24 @@ namespace IntakerConsole
     {
         static void Main(string[] args)
         {
-            if (ArgHelper.LoadConfigFromArgs(args, out IntakerConsoleAppConfig config))
-            {
-                //Console.WriteLine(GC.GetTotalMemory(true));
-                var sw = new Stopwatch();
-                sw.Start();
-                IntakerConsoleApp.Run(config);
-                sw.Stop();
+            var host = Host.CreateDefaultBuilder(args)
+                            .ConfigureServices(ConfigureServices)
+                            .Build();
 
-                Console.WriteLine($"Elapsed: {sw.Elapsed}");
-                //Console.WriteLine(GC.GetTotalMemory(true));
-            }
+            var consoleWorker = ActivatorUtilities.CreateInstance<ConsoleWorker>(host.Services);
+
+            var sw = new Stopwatch();
+            sw.Start();
+            consoleWorker.Run();
+            sw.Stop();
+
+            Console.WriteLine($"Elapsed: {sw.Elapsed}");
+        }
+
+        private static void ConfigureServices(HostBuilderContext hostContext, IServiceCollection services)
+        {
+            var logger = new ApplicationLogger();
+            services.AddSingleton<IApplicationLogger>(logger);
         }
     }
 }

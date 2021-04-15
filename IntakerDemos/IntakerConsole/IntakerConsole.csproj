@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Intaker" Version="0.1.1.80-beta" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,10 @@
     <None Include="..\sample-files\single-data-type.balance10.csv" Link="sample-files\single-data-type.balance10.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IntakerConsole.Shared\IntakerConsole.Shared.csproj" />
   </ItemGroup>
 
 </Project>

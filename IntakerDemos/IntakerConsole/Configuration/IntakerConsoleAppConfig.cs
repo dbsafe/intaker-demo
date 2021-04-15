@@ -1,4 +1,4 @@
-﻿namespace IntakerConsole
+﻿namespace IntakerConsole.Configuration
 {
     public class IntakerConsoleAppConfig
     {
