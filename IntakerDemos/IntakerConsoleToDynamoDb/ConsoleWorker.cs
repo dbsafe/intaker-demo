@@ -1,12 +1,9 @@
 ﻿using DataProcessor;
-using DataProcessor.Contracts;
-using DataProcessor.DataSource.File;
-using DataProcessor.InputDefinitionFile;
 using DataProcessor.Models;
-using DataProcessor.ProcessorDefinition;
 using Intaker.Repository.DynamoDb;
+using IntakerConsole.Shared;
+using IntakerConsole.Shared.Logger;
 using IntakerConsoleToDynamoDb.Configuration;
-using IntakerConsoleToDynamoDb.Logger;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
@@ -41,7 +38,7 @@ namespace IntakerConsoleToDynamoDb
             {
                 ValidatePaths(_intakerConsoleAppConfig);
 
-                var (processor, inputDefinitionFile) = BuildParsedDataProcessor(_intakerConsoleAppConfig);
+                var processor = ParsedDataProcessorBuilder.BuildParsedDataProcessor(_intakerConsoleAppConfig.SpecsPath, _intakerConsoleAppConfig.InputPath);
 
                 var memoryBeforeLoading = GC.GetTotalMemory(true) / 1024;
                 var parsed = processor.Process();
@@ -71,28 +68,6 @@ namespace IntakerConsoleToDynamoDb
             _logger.Log($"Memory after loading: {memoryBeforeLoading:n0} Kb");
             _logger.Log($"Memory after loading: {memoryAfterLoading:n0} Kb");
             _logger.Log($"Memory after loading: {increase:n0} Kb");
-        }
-
-        private static (ParsedDataProcessor10 processor, InputDefinitionFile10 inputDefinitionFile) BuildParsedDataProcessor(IntakerConsoleAppConfig intakerConsoleAppConfig)
-        {
-            var inputDefinitionFile = FileLoader.Load<InputDefinitionFile10>(intakerConsoleAppConfig.SpecsPath);
-            var fileDataSourceValidFile = BuildFileDataSource(intakerConsoleAppConfig.InputPath, inputDefinitionFile);
-
-            var fileProcessorDefinition = FileProcessorDefinitionBuilder.CreateFileProcessorDefinition(inputDefinitionFile);
-            return (new ParsedDataProcessor10(fileDataSourceValidFile, fileProcessorDefinition), inputDefinitionFile);
-        }
-
-        private static IDataSource<ParserContext10> BuildFileDataSource(string inputPath, InputDefinitionFile10 inputDefinition)
-        {
-            var fileDataSourceConfig = new FileDataSourceConfig
-            {
-                Delimiter = inputDefinition.Delimiter,
-                HasFieldsEnclosedInQuotes = inputDefinition.HasFieldsEnclosedInQuotes,
-                Path = inputPath,
-                CommentedOutIndicator = inputDefinition.CommentedOutIndicator
-            };
-
-            return new FileDataSource<ParserContext10>(fileDataSourceConfig);
         }
 
         private void LogConfiguration()

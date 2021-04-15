@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intaker.Repository.DynamoDb\Intaker.Repository.DynamoDb.csproj" />
+    <ProjectReference Include="..\IntakerConsole.Shared\IntakerConsole.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
